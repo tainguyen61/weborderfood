@@ -7,20 +7,20 @@
     
         function Show(){
             //Model
-            // $product = $this->model("ProductsModel");
-            // $pd = $product->Product();
-            // $array = [];
-            // while($row = mysqli_fetch_array($pd)){
-            //     array_push($array,new Product(
-            //         $row['mamon'],
-            //         $row['tenmon'],
-            //         $row['gia'],
-            //         $row['danhgia'],
-            //         $row['maloai'],
-            //         $row['hinhanh']
-            //     ));
-            // }
-            // echo json_encode($array);
+            $product = $this->model("ProductsModel");
+            $pd = $product->Product();
+            $array = [];
+            while($row = mysqli_fetch_array($pd)){
+                array_push($array,new Product(
+                    $row['mamon'],
+                    $row['tenmon'],
+                    $row['gia'],
+                    $row['danhgia'],
+                    $row['maloai'],
+                    $row['hinhanh']
+                ));
+            }
+            echo json_encode($array);
             //View
             $this->view("layout");
         
