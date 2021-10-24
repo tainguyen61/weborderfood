@@ -7,7 +7,13 @@
 
         public function Product(){
             $query = "SELECT * FROM MON";
-            return mysqli_query($this->conn,$query);
+            $row = mysqli_query($this->conn,$query);
+            $array =array();
+            while($data = mysqli_fetch_array($row)){
+                $array[] = $data;
+            }
+            // $array["key"]=1;
+            return json_encode($array);
         }
     }
 ?>
