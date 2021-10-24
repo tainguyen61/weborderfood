@@ -8,11 +8,13 @@
         function __construct(){
             $array = $this->UrlProcess();
             //Controller
-            if( file_exists("./mvc/controllers/".$array[0].".php") ){
+            // if( file_exists("./mvc/controllers/".$array[0].".php") ){
+                if( file_exists("./mvc/Controller/".$array[0].".php") ){ 
                 $this->controller = $array[0];
                 unset($array[0]);
             }
             require_once "./mvc/controllers/".$this->controller.".php";
+            // require_once "./mvc/Controller/".$this->controller.".php";
             $this->controller = new $this->controller;
             //Action
             if(isset($array[1])){
