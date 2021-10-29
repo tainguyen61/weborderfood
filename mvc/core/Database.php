@@ -5,7 +5,6 @@
         protected $user = "root";
         protected $pass = "";
         protected $database = "orderfood";
-
         function __construct()
         {
             $this->conn = mysqli_connect($this->server,$this->user,$this->pass);
